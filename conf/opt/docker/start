@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Clearing logs"
+
+echo "" > /var/log/apache2/access_log
+echo "" > /var/log/apache2/error_log
+
+set -e
+
+echo "Starting Apache"
+
+/usr/sbin/apache2ctl start
+
+echo "Apache started"
+
+
+
+tail -f /var/log/apache2/access_log /var/log/apache2/error_log
+
