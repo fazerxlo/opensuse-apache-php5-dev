@@ -11,7 +11,7 @@ RUN zypper -n ar -f http://download.opensuse.org/repositories/server:/php:/exten
     zypper --non-interactive in --recommends \
     apache2 php5 php5-mysql apache2-mod_php5 \
     php5-gd php5-gettext php5-mbstring php5-pear \
-    php5-curl php5-suhosin php5-xdebug  vim mc ; \
+    php5-curl php5-suhosin php5-xdebug; \
     zypper clean; \
     sed -i 's/variables_order = "GPCS"/variables_order = "EGPCS"/g' /etc/php5/apache2/php.ini; \
     a2enmod php5; \
